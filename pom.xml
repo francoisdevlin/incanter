@@ -112,6 +112,7 @@
       <artifactId>jfreechart</artifactId>
       <version>1.0.13</version>
     </dependency> 
+    <!-- temporary version of clojure-json compiled against clojure-new -->
      <dependency>
       <groupId>org.clojars.liebke</groupId>
       <artifactId>clojure-new-json</artifactId>

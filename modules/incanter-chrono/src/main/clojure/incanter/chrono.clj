@@ -1,3 +1,5 @@
+;;DO NOT USE THIS REPOT - PLEASE USE INCANTER MAIN, CHRONO BRANCH - SFD
+
 (ns #^{:doc "chrono.clj --- Because calling it date-utils would be boring.
 
 Complete and total re-write, centered around two multimethods, joda-tz and to-joda*.
@@ -496,11 +498,11 @@ t.  If t is not provided, the current system time is assumed."
 (defn later-seq
   "Returns a lazy seq of DateTime objects that is later than time t by
  a constant period p.  A default of now is used if t is not provided."
-  ([p] (later-seq p (joda-date)))
-  ([p t] (iterate #(later % p) (joda-date t))))
+  ([interval] (later-seq interval (joda-date)))
+  ([interval start] (iterate #(later % interval) (joda-date start))))
 
 (defn earlier-seq
   "Returns a lazy seq of DateTime objects that is earlier than time t by
  a constant period p.  A default of now is used if t is not provided."
-  ([p] (earlier-seq p (joda-date)))
-  ([p t] (iterate #(earlier % p) (joda-date t))))
+  ([interval] (earlier-seq interval (joda-date)))
+  ([interval start] (iterate #(earlier % interval) (joda-date start))))
